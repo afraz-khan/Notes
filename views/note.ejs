@@ -22,7 +22,7 @@
                     <h5  >Add note<span id="add_notf" style="padding-left: 30px;font-size: 15px;color:green" > ( note added )</span></h5>
                     
                     <div class="input-group-append">
-                            <input type="text" class="form-control" placeholder="Enter note here" >
+                            <input id="add_text" type="text" class="form-control" placeholder="Enter note here" >
                         <span id="plus" class="input-group-text" style="font-weight: 900;cursor:pointer" > + </span>
                     </div>
                     
@@ -40,14 +40,11 @@
                             
                     </li>
                 </div>
-                <ul class="list-group" style="list-style-type:circle;;max-height: 400px;overflow: scroll;" >
+                <ul id="notelist" class="list-group" style="list-style-type:circle;;max-height: 300px;overflow: scroll;" >
                         
-                        
-                                <li class="list-group-item"><input type="text" class="form-control" value="I am in" /><a href="#" style="float:right;color:green" >Update</a> <span style="float:right" >|</span> <a style="float:right;color: firebrick;margin-left: 30px" href="#" >Delete</a></li>    
-                            
-                        
-                        
-                        
+                        <% Notes.forEach(function(item){ %>
+                                <li id='<%=item._id%>' class="list-group-item"><input type="text" class="form-control" value='<%= item.note %>' /><a href="#" style="float:right;color:green" >Update</a> <span style="float:right" >|</span> <a style="float:right;color: firebrick;margin-left: 30px" href="#" >Delete</a></li>    
+                        <% }); %>
                         
                     </ul>
             </div>
