@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Afraz NoteBook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="/public/assets/main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="/public/assets/main.js"></script>
+    
+</head>
+<body style="background-color:cornsilk" >
+    <div class="container  " >
+        <h2 style="font-weight: 700;text-align:center;margin-top: 50px;margin-bottom: 50px;" >Afraz's NoteBook</h2>
+        <div class="row" >
+            <div class="col-md-6" >
+                <div class="form-group" >
+                    <h5  >Add note<span id="add_notf" style="padding-left: 30px;font-size: 15px;color:green" > ( note added )</span></h5>
+                    
+                    <div class="input-group-append">
+                            <input type="text" class="form-control" placeholder="Enter note here" >
+                        <span id="plus" class="input-group-text" style="font-weight: 900;cursor:pointer" > + </span>
+                    </div>
+                    
+                </div>
+                <img src="/public/assets/book.png" alt="Smiley face" />
+            </div>
+            <div class="col-md-6" >
+                <div class="form-group" >
+                        <h5>Search a note</h5>
+                        <input type="text" class="form-control" placeholder="Enter note id here" >
+                        <span id="not_notf" > ( Not found )</span>
+                </div>
+                <div >
+                    <li style="max-height: 400px;margin-top: 70px;" class="list-group-item active" >All Notes
+                            
+                    </li>
+                </div>
+                <ul class="list-group" style="list-style-type:circle;;max-height: 400px;overflow: scroll;" >
+                        
+                        
+                                <li class="list-group-item"><input type="text" class="form-control" value="I am in" /><a href="#" style="float:right;color:green" >Update</a> <span style="float:right" >|</span> <a style="float:right;color: firebrick;margin-left: 30px" href="#" >Delete</a></li>    
+                            
+                        
+                        
+                        
+                        
+                    </ul>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

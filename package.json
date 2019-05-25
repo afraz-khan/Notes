@@ -1,0 +1,31 @@
+{
+  "name": "notable",
+  "version": "1.0.0",
+  "description": "Notes CRUD Api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrAfrazKhan/Notes.git"
+  },
+  "keywords": [
+    "notes",
+    "afraz"
+  ],
+  "author": "Afraz Khan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrAfrazKhan/Notes/issues"
+  },
+  "homepage": "https://github.com/MrAfrazKhan/Notes#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.1",
+    "express": "^4.17.0",
+    "mongodb": "^3.2.6",
+    "nodemon": "^1.19.0"
+  }
+}
