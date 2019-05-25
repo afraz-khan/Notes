@@ -10,7 +10,7 @@ app.use('/public/assets',express.static('public/assets'));
 app.use(bodyParser.urlencoded({ extended: true }));
 var middle = bodyParser.urlencoded({extended:false})
 
-var port  = 3000
+const port=process.env.PORT || 3000
 
 mongodb.connect(db.url,{'useNewUrlParser':true}, (err, database) => {
     if (err) return console.log(err)
@@ -22,7 +22,7 @@ mongodb.connect(db.url,{'useNewUrlParser':true}, (err, database) => {
     app.get('/',(req,rep)=>{
       collection.find({}).toArray(function(err,result){
         if(err) console.log('error')
-        else console.log(result); rep.render('note',{Notes:result})
+        else rep.render('note',{Notes:result})
     })
       
     })
@@ -36,7 +36,6 @@ mongodb.connect(db.url,{'useNewUrlParser':true}, (err, database) => {
           rep.json({msg:'error'})
         } else {
           DB.collection('notes').find({}).sort({_id:-1}).limit(1).toArray(function(err,result2){
-            console.log(result2)
           rep.json({msg:result2})
           });
           

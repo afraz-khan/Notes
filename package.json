@@ -2,10 +2,11 @@
   "name": "notable",
   "version": "1.0.0",
   "description": "Notes CRUD Api",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon app.js.js"
   },
   "repository": {
     "type": "git",
