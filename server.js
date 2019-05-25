@@ -9,19 +9,26 @@ app.set('view engine','ejs');
 app.use('/public/assets',express.static('public/assets'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-let database;
+var port  = 3000
 
-mongodb.connect(db.url, (err, database) => {
+mongodb.connect(db.url,{'useNewUrlParser':true}, (err, database) => {
     if (err) return console.log(err)
     
-    app.listen(port, () => {
-      console.log('We are live on ' + port);
-    });               
+    var DB = database.db('Afraz_Notable')
+    var collection = DB.collection('notes')
+    
+    app.get('/',(req,rep)=>{
+        console.log(DB.collection('notes').find())
+        rep.render('note')
+    })
+
+                   
   })
 
+  app.listen(port, () => {
+    console.log('We are live on ' + port);
+    
+  });
 
-app.get('/',(req,rep)=>{
-    rep.render('note')
-})  
 
-app.listen(3000)
+  
