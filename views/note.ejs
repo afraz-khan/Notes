@@ -3,23 +3,48 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/public/assets/book.png">
     <title>Afraz NoteBook</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link rel="stylesheet" type="text/css" media="screen" href="/public/assets/main.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="/public/assets/main.js"></script>
     
 </head>
 <body style="background-color:cornsilk" >
     <div class="container  " >
-        <h2 style="font-weight: 700;text-align:center;margin-top: 50px;margin-bottom: 50px;" >Afraz's NoteBook</h2>
+        <div class="row" >
+            <div class="col-sm-4" >
+                <h6 style="border:1px solid gray;padding:10px;color: #6ead3a;font-weight: 700;
+                text-align:center;margin-top: 40px;margin-bottom: 20px;" >Node + Express + MongoDB <span style="color:gray" >Api</span></h6>
+            </div>
+            <div class="col-sm-4" >
+                    <h2 style="font-weight: bolder;text-align:center;margin-top: 40px;margin-bottom: 20px;font-family:cursive" >Notable</h2>
+                </div>
+            <div class="col-sm-4" >
+                <p><h6 style="border:1px solid gray;padding:10px;color: #666666;font-weight: 700;
+                    text-align:left;margin-top: 40px;margin-bottom: 20px;" >Afraz Khan | 
+                    <a href="https://www.linkedin.com/in/mrafrazkhan" ><i style="padding-left:10px" class="fa fa-linkedin"></i></a>
+                    <a href="https://twitter.com/MrAfrazkhan" ><i style="padding-left:10px" class="fa fa-twitter"></i></a>
+                    
+                    <a href="https://www.facebook.com/Afrazkhan.me" ><i style="padding-left:10px" class="fa fa-facebook"></i></a>
+                    
+                    <a href="https://github.com/mrAfrazKhan" ><i style="padding-left:10px" class="fa fa-github"></i></a><sup>Code here</sup>
+                    
+                </h6>
+            </p>
+            </div>
+        </div>
+        
+        <hr>
         <div class="row" >
             <div class="col-md-6" >
                 <div class="form-group" >
-                    <h5  >Add note<span id="add_notf" style="padding-left: 30px;font-size: 15px;color:green" > ( note added )</span></h5>
+                    <h5 style="font-weight:700" >Add note<span id="add_notf" style="padding-left: 30px;font-size: 15px;color:green" > ( note added )</span></h5>
                     
                     <div class="input-group-append">
                             <input id="add_text" type="text" class="form-control" placeholder="Enter note here" >
@@ -27,16 +52,16 @@
                     </div>
                     
                 </div>
-                <img src="/public/assets/book.png" alt="Smiley face" />
+                <img style="display:flex;padding-top: 70px;padding-left: 70px" src="/public/assets/book.png" alt="Smiley face" />
             </div>
             <div class="col-md-6" >
                 <div class="form-group" >
-                        <h5>Search a note</h5>
+                        <h5 style="font-weight:700">Search a note</h5>
                         <input type="text" class="form-control" placeholder="Enter note id here" >
                         <span id="not_notf" > ( Not found )</span>
                 </div>
                 <div >
-                    <li style="max-height: 400px;margin-top: 70px;" class="list-group-item active" >All Notes
+                    <li style="font-weight:700;max-height: 400px;margin-top: 70px;" class="list-group-item active" >All Notes
                             
                     </li>
                 </div>
