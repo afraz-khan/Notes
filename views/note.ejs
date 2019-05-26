@@ -9,9 +9,9 @@
     
     <link rel="stylesheet" type="text/css" media="screen" href="/public/assets/main.css" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    
     <script src="/public/assets/main.js"></script>
     
 </head>
@@ -44,11 +44,16 @@
         <div class="row" >
             <div class="col-md-6" >
                 <div class="form-group" >
-                    <h5 style="font-weight:700" >Add note<span id="add_notf" style="padding-left: 30px;font-size: 15px;color:green" > ( note added )</span></h5>
+                    <h5 style="font-weight:700" >Add note<span id="add_notf" style="padding-left: 30px;font-size: 15px" >
+                        <i class="fa fa-check-square" style="color:green" ></i> ( note added )</span></h5>
                     
                     <div class="input-group-append">
                             <input id="add_text" type="text" class="form-control" placeholder="Enter note here" >
-                        <span id="plus" class="input-group-text" style="font-weight: 900;cursor:pointer" > + </span>
+                        <!-- <span id="plus" class="input-group-text" style="font-weight: 900;cursor:pointer" > + </span> -->
+                        <span id="plus" class="input-group-text" style="font-weight: 900;cursor:pointer">
+
+                        <i class="fa fa-plus" ></i>
+                        </span>
                     </div>
                     
                 </div>
@@ -57,10 +62,15 @@
             <div class="col-md-6" >
                 <div class="form-group" >
                         <h5 style="font-weight:700">Search a note</h5>
-                        <input type="text" class="form-control" placeholder="Enter note id here" >
-                        <span id="not_notf" > ( Not found )</span>
+                        <div class="input-group-append">
+                        <input id="search_txt" type="text" class="form-control" placeholder="Enter note here" >
+                        <span id="search" class="input-group-text"   style="font-weight: 900;cursor:pointer" >
+                        <i class="fa fa-search" ></i>
+                        </span>
+                        </div>
+                        <span id="not_notf" style="font-weight:500" ><i class="fa fa-times" style="color:red" ></i> ( Not found )</span>
                 </div>
-                <div >
+                <div id="panel_head" >
                     <li style="font-weight:700;max-height: 400px;margin-top: 70px;" class="list-group-item active" >All Notes
                             
                     </li>

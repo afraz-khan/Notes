@@ -27,6 +27,7 @@ mongodb.connect(db.url,{'useNewUrlParser':true}, (err, database) => {
       
     })
 
+    // addding note 
     app.post('/addNote',middle,(req,rep)=>{
 
       var note = req.body;
@@ -42,6 +43,26 @@ mongodb.connect(db.url,{'useNewUrlParser':true}, (err, database) => {
         }
       })      
   })
+
+//    process.on('unhandledRejection', function(err) {
+//     console.log(err);
+//     // sendInTheCalvary(err);
+// });
+
+  //searching a note
+  app.post('/searchnote',middle,(req,rep)=>{
+    var text = req.body.value;
+    
+        // DB.collection('notes').createIndex({note:"text"});
+        DB.collection('notes').find({'note':{$regex : ".*"+text+".*",$options:'i'}}).toArray(function(err,result){
+          if (err) rep.json({msg:'error'})
+          else  rep.json({msg:result.length})
+        
+      })
+    
+
+    })
+  
 
 })
   app.listen(port, () => {
