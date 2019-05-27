@@ -13,9 +13,9 @@ see live project here :point_right: [AfrazNotable](https://afraznotable.herokuap
 * **PUT**
 * **DELETE**
  
- ## Database
- ###### Mongodb connection is made using url in **config.js**
+ ## Configuration
  
  * #### **public** folder has all assests which require static binding.
  * #### **views** folder has html.
  * #### **app.js** contains all code of web app.  
+ * #### **config** folder contains url for connection to mongoDB cloud.  
