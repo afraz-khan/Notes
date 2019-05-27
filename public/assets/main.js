@@ -3,7 +3,7 @@ $(document).ready(function(){
     var add_btn = $('#plus');
     var add_notification = $('#add_notf');
     
-    // add notification
+    // insert notification
     add_btn.click(function(e){
         e.preventDefault();
 
@@ -26,6 +26,9 @@ $(document).ready(function(){
                       
                             // add new item to list
                              $('#notelist').prepend(item)
+                             var notecount = parseInt( $("#notecount").text());
+                             $("#notecount").text(notecount=notecount+1)
+                             
                             })
                     },2000)
                 
@@ -41,8 +44,7 @@ $(document).ready(function(){
     var search_btn = $('#search');
     var search_notification = $('#not_notf');
 
-    // // search notification
-    
+    //search notification
     search_btn.click(function(){
 
         
@@ -54,6 +56,8 @@ $(document).ready(function(){
             data : value,
             success:function(data){
                 var count = parseInt(data.msg)
+
+                // if no note found
                 if(count==0){
                     search_notification.show('slow',function(){
                         setTimeout(function(){
@@ -66,6 +70,8 @@ $(document).ready(function(){
                     })  
                 }
                 else{
+
+                    // if note exists
                     var record ="records contain"
                     if(count == 1){
                         record = 'record contains'
@@ -89,8 +95,52 @@ $(document).ready(function(){
     })
     
 
+    // update a note
+
+    var update_btns = $('#notelist li #update_btn');
+
+    $.each(update_btns,function(i,val){
+            
+        val.onclick = function(){
+            var li = val.parentElement;
+            var input = val.previousElementSibling.value;
+            var note = {id: li.getAttribute('id'),text:input};
+            $.ajax({
+                type:'put',
+                url:'/updatenote',
+                data:note,
+                success:function(Data){
+                    $('#success_alert').show('slow',function(){
+                    setTimeout(function(){
+                        $('#success_alert').hide()
+                    },3000)
+                    })
+                }
+            })
+        }
+    })
 
 
+    // delete a note
 
+    var delete_btn = $('#notelist li #delete_btn');
+
+    $.each(delete_btn,function(i,val){
+        val.onclick = function(){
+            var li = val.parentElement;
+            var note = {id:li.getAttribute('id')}
+
+            $.ajax({
+                type:'delete',
+                url:'/deletenote',
+                data:note,
+                success:function(Data){
+                    
+                    var ul = li.parentElement;
+                    ul.removeChild(li)
+                }
+            })
+        }
+    })
 
 })

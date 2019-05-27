@@ -58,6 +58,15 @@
                     
                 </div>
                 <img style="object-fit:cover;width: 300px;height: 300px" src="/public/assets/book.png" alt="Smiley face" />
+                <div id="success_alert" class="alert alert-success" style="margin-top:50px ;display: none" >
+                    <strong>Success!</strong> Record is Updated successfully !
+                  </div>
+                  <div id="del_success_alert" class="alert alert-success" style="margin-top:50px ;display: none" >
+                    <strong>Success!</strong> Record is Updated successfully !
+                  </div>
+                  <div id="danger_alert" class="alert alert-danger" style="margin-top:50px;display: none" >
+                    <strong>Sorry!</strong> Something went wrong.
+                  </div>
             </div>
             <div class="col-md-6" >
                 <div class="form-group" >
@@ -70,16 +79,20 @@
                         </div>
                         <span id="not_notf" style="font-weight:500" ><i class="fa fa-times" style="color:red" ></i> ( Not found )</span>
                 </div>
+                
                 <div id="panel_head" >
-                    <li style="font-weight:700;max-height: 400px;margin-top: 70px;" class="list-group-item active" >All Notes
+                    <li style="color: wheat;font-weight:700;max-height: 400px;margin-top: 70px;" class="list-group-item active" >All Notes |
+                        <span id="notecount" style="color:white" ><%=Notes.length%></span> 
                             
                     </li>
                 </div>
                 <ul id="notelist" class="list-group" style="list-style-type:circle;;max-height: 300px;overflow: scroll;" >
-                        
+                        <% var i = 1 %>
                         <% Notes.forEach(function(item){ %>
-                                <li id='<%=item._id%>' class="list-group-item"><input type="text" class="form-control" value='<%= item.note %>' /><a href="#" style="float:right;color:green" >Update</a> <span style="float:right" >|</span> <a style="float:right;color: firebrick;margin-left: 30px" href="#" >Delete</a></li>    
-                        <% }); %>
+                                <li id='<%=item._id%>' class="list-group-item"> <span style="font-size:13px;font-weight: bold" ><%=i%>-</span> <input type="text" class="form-control" value='<%= item.note %>' />
+                                    <a href="#" id="update_btn" style="float:right;color:green" >Update</a> <span style="float:right" >|</span>
+                                     <a id="delete_btn" style="float:right;color: firebrick;margin-left: 30px" href="#" >Delete</a></li>    
+                        <% i = i +1 }); %>
                         
                     </ul>
             </div>

@@ -2,6 +2,7 @@ const express = require('express');
 const mongodb = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
 const db             = require('./config/db');
+const ObjectID = require('mongodb').ObjectID;
 
 const app = express();
 
@@ -44,11 +45,6 @@ mongodb.connect(db.url,{'useNewUrlParser':true}, (err, database) => {
       })      
   })
 
-//    process.on('unhandledRejection', function(err) {
-//     console.log(err);
-//     // sendInTheCalvary(err);
-// });
-
   //searching a note
   app.post('/searchnote',middle,(req,rep)=>{
     var text = req.body.value;
@@ -59,10 +55,27 @@ mongodb.connect(db.url,{'useNewUrlParser':true}, (err, database) => {
           else  rep.json({msg:result.length})
         
       })
-    
-
     })
+
+  // updating a note
+  app.put('/updatenote',middle,(req,rep)=>{
+    var searchID = {'_id':new ObjectID(req.body.id)}
+    var note = {note:req.body.text};
+
+    DB.collection('notes').updateOne(searchID,{$set:note},(err,result)=>{
+      if(err) rep.json({msg:'error'})
+      else rep.json({msg:'updated'})
+    })
+  })
   
+  // deleting a note
+  app.delete('/deletenote',middle,(req,rep)=>{
+    var del_ID = {'_id':new ObjectID(req.body.id)}
+    DB.collection('notes').deleteOne(del_ID,(err,result)=>{
+      if(err) rep.json({msg:'error'})
+      else rep.json({msg:'deleted'})
+    })
+  })
 
 })
   app.listen(port, () => {
