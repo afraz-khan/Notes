@@ -16,7 +16,7 @@
     
 </head>
 <body style="background-color:cornsilk" >
-    <div class="container  " >
+    <div class="container  "  style="margin-bottom:100px" >
         <div class="row" >
             <div class="col-sm-4" >
                 <h6 style="border:1px solid gray;padding:10px;color: #6ead3a;font-weight: 700;
@@ -90,8 +90,8 @@
                         <% var i = 1 %>
                         <% Notes.forEach(function(item){ %>
                                 <li id='<%=item._id%>' class="list-group-item"> <span style="font-size:13px;font-weight: bold" ><%=i%>-</span> <input type="text" class="form-control" value='<%= item.note %>' />
-                                    <a href="#" id="update_btn" style="float:right;color:green" >Update</a> <span style="float:right" >|</span>
-                                     <a id="delete_btn" style="float:right;color: firebrick;margin-left: 30px" href="#" >Delete</a></li>    
+                                    <a id="update_btn" style="cursor: pointer;float:right;color:green" >Update</a> <span style="float:right" >|</span>
+                                     <a id="delete_btn" style="cursor: pointer;float:right;color: firebrick;margin-left: 30px"  >Delete</a></li>    
                         <% i = i +1 }); %>
                         
                     </ul>

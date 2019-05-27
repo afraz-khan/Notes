@@ -28,8 +28,8 @@ $(document).ready(function(){
                             var notecount = parseInt( $("#notecount").text());
                             var item = "<li id="+id+" class='list-group-item'> <span style='font-size:13px;font-weight: bold' >"+(1).toString()+
                             "-</span> <input type='text' class='form-control' value='"+note2+"'/>"+
-                            "<a href='#' id='update_btn' style='float:right;color:green' >Update</a> <span style='float:right' >|</span>"+
-                             "<a id='delete_btn' style='float:right;color: firebrick;margin-left: 30px' href='#' >Delete</a></li>"
+                            "<a id='update_btn' style='cursor:pointer;float:right;color:green' >Update</a> <span style='float:right' >|</span>"+
+                             "<a id='delete_btn' style='cursor:pointer;float:right;color: firebrick;margin-left: 30px' >Delete</a></li>"
                       
                             // add new item to list
                              $('#notelist').prepend(item)
