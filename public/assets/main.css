@@ -15,3 +15,13 @@ body{
 #not_notf,#add_notf{
     display: none;
 }
+
+@media screen and (max-width: 400px) {
+    #import_text{
+        float: left;
+
+  }
+  #panel_head div{
+      height: 80px;
+  }
+}
