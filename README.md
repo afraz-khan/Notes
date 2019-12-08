@@ -1,5 +1,5 @@
 # Node + Express + MongoDB  :nut_and_bolt::wrench::leaves:
-###### A CRUD *(create, read, update, delete)* API 
+###### A CRUD *(create, read, update, delete)* API just for basic learning
 
 see live project here :point_right: [AfrazNotable](https://afraznotable.herokuapp.com/)
 
